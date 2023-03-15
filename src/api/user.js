@@ -1,24 +1,15 @@
-import request from '@/utils/request'
+// import request from '@/utils/request'
 
 export function login(data) {
-  return request({
-    url: '/vue-element-admin/user/login',
-    method: 'post',
-    data
-  })
+
 }
+// return 返回的是promise对象 可以用async和await获取结果
+// 集中式管理 谁想用就可以直接来引用
 
 export function getInfo(token) {
-  return request({
-    url: '/vue-element-admin/user/info',
-    method: 'get',
-    params: { token }
-  })
+
 }
 
 export function logout() {
-  return request({
-    url: '/vue-element-admin/user/logout',
-    method: 'post'
-  })
+
 }

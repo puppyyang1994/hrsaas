@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-
+// 先引入request request里是axios实例和拦截器
 export function fetchList(query) {
   return request({
     url: '/vue-element-admin/article/list',
