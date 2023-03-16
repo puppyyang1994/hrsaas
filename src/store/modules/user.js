@@ -31,12 +31,10 @@ const actions = {
   // login这是方法
   async  login(context, data) {
     // 调用api接口
-    const result = await login(data)
-    // axios默认加了一层data
-    if (result.data.success) {
-      // 如果为真 表示登录成功  可以取data
-      context.commit('setToken', result.data.data)
-    }
+    const result = await login(data) // 拿到token
+    // request.js中已经对返回的promise对象进行了处理 不再需要判断了 拿不到会return出去
+
+    context.commit('setToken', result) // 设置token  在响应拦截器已经处理过了
   }
 }
 
