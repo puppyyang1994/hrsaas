@@ -71,7 +71,7 @@
         @click.native.prevent="handleLogin"
         >Login</el-button
       >
-
+      <!-- 这里写native表示监听组件的原生时间 -->
       <div style="position: relative">
         <div class="tips">
           <span style="margin-right: 20px">账号: 13800000002</span>

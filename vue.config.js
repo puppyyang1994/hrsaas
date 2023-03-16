@@ -36,8 +36,19 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    }
+    },
+    // 需要注释掉 因为mockserver会导致代理服务的异常
     // before: require('./mock/mock-server.js')
+    // 采用vue-cli的代理配置
+    proxy: {
+      '/api': {
+        target: 'http://ihrm-java.itheima.net/', // 要代理的地址
+        changeOrigin: true
+        /*  pathRewrite: {
+          '^/api': ''
+        } */
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
@@ -124,6 +135,7 @@ module.exports = {
   }
 
 }
+// 取消掉eslint语法报错
 module.exports = {
   chainWebpack: config => {
     config.module.rules.delete('eslint')
